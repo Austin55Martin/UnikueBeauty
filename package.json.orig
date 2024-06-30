@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "name": "UnikueBeauty",
   "version": "0.1.0",
   "homepage": "https://Austin55Martin.github.io",
+=======
+  "name": "jennicas_website",
+  "version": "0.1.0",
+>>>>>>> cb195e6aff247cf20052748c10c52ffdd682060f
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -27,8 +32,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+=======
+>>>>>>> cb195e6aff247cf20052748c10c52ffdd682060f
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,6 +65,10 @@
     "@types/react": "^17.0.80",
     "@types/react-dom": "^18.2.25",
     "file-loader": "^6.2.0",
+<<<<<<< HEAD
+    "gh-pages": "^6.1.1",
+=======
+>>>>>>> cb195e6aff247cf20052748c10c52ffdd682060f
     "typescript": "^4.9.5"
   }
 }

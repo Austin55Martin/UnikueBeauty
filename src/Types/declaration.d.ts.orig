@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+declare module '*.jpg';
+declare module '*.png';
+=======
+declare module '*.jpg';
+declare module '*.png';
+>>>>>>> cb195e6aff247cf20052748c10c52ffdd682060f
+declare module '*.PNG';
