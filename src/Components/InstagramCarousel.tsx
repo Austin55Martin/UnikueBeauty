@@ -13,7 +13,9 @@ const useStyles = makeStyles()(() => ({
 function InstagramCarousel() {
   const { classes } = useStyles();
   const [images, setImages] = useState([]);
-  const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
+  const accessToken = process.env.REACT_APP_INSTAGRAM_ACCESS_TOKEN;
+
+  console.log(process.env)
 
   useEffect(() => {
     const fetchImages = async () => {
