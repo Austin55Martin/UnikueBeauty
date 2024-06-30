@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Divider, Typography } from "@mui/material";
-import { useDynamicViewSizes } from "../Theme/DynamicDisplay";
+import { useDynamicViewSizes, useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
 import headshot from "../Gallery/JennHomePage.PNG";
 import { makeStyles } from "tss-react/mui";
 import InstagramCarousel from "../Components/InstagramCarousel";
@@ -45,6 +45,7 @@ const useStyles = makeStyles()(() => ({
 function Home() {
   const { classes } = useStyles();
   const dynamicView = useDynamicViewSizes();
+  const { IsMobileView } = useDynamicWindowDimensions();
 
   const headerText = "THE SALON";
   const paragraphText =
@@ -61,7 +62,6 @@ function Home() {
             minWidth: "200px",
             width: "350px",
             display: "flex",
-            justifyContent: "center",
             zIndex: 10,
           }}
         >
@@ -70,7 +70,7 @@ function Home() {
             style={{ maxWidth: "100%", height: "100%", imageRendering: 'crisp-edges' }}
           />
         </Box>
-        <Box sx={{display: 'flex', flexDirection: "column", maxWidth: "500px", marginLeft: "2rem", marginTop: "2rem"}}>
+        <Box sx={{display: 'flex', flexDirection: "column", maxWidth: "550px", marginLeft: IsMobileView ? "unset" : "2rem", marginTop: IsMobileView ? "2rem" : "unset"}}>
           <Typography sx={{...typographyStyles, fontSize: "1.25rem", fontWeight: "600"}}>
             {"Welcome to Unikue Beauty Hair Salon!"}
           </Typography>

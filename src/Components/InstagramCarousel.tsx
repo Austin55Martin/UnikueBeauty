@@ -6,7 +6,7 @@ import Carousel from "react-material-ui-carousel";
 
 const useStyles = makeStyles()(() => ({
     root: {
-        width: "200px" // remove this later when we actually get the images
+      width: "200px" // remove this later when we actually get the images
     }
 }));
 
@@ -21,7 +21,7 @@ function InstagramCarousel() {
         const response = await axios.get(
           `https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=${accessToken}`
         );
-        if (response.status == 200) {
+        if (response.status === 200) {
           setImages(response.data.data);
         }
       } catch (error) {} // maybe loop this if it fails?
