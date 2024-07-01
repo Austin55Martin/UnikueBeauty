@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.af792597.css",
-    "main.js": "/static/js/main.7b6af299.js",
-    "static/media/JennHomePage.PNG": "/static/media/JennHomePage.63b4207e486ad62b83e7.PNG",
-    "static/media/MainLogo.PNG": "/static/media/MainLogo.3a69711547fa86786a95.PNG",
-    "static/media/cowboy.PNG": "/static/media/cowboy.98ae33c286d5aa2a351a.PNG",
-    "static/media/sacramento-latin-400-normal.woff": "/static/media/sacramento-latin-400-normal.4005a4a412cdbdaf17c6.woff",
-    "static/media/sacramento-latin-400-normal.woff2": "/static/media/sacramento-latin-400-normal.744cd7b400b875e7a501.woff2",
-    "static/media/dm-sans-latin-400-normal.woff": "/static/media/dm-sans-latin-400-normal.693210afc0f6e924904e.woff",
-    "static/media/sacramento-latin-ext-400-normal.woff": "/static/media/sacramento-latin-ext-400-normal.5d29e4f99f70a6c0c873.woff",
-    "static/media/sacramento-latin-ext-400-normal.woff2": "/static/media/sacramento-latin-ext-400-normal.405c40d51572ad12bc2e.woff2",
-    "static/media/dm-sans-latin-400-normal.woff2": "/static/media/dm-sans-latin-400-normal.d6dd259ebf3e3a66be69.woff2",
-    "static/media/dm-sans-latin-ext-400-normal.woff": "/static/media/dm-sans-latin-ext-400-normal.413af63a119bbef9e8cd.woff",
-    "static/media/cow.PNG": "/static/media/cow.d822149fde4b1e7f0626.PNG",
-    "static/media/dm-sans-latin-ext-400-normal.woff2": "/static/media/dm-sans-latin-ext-400-normal.f65533d614ce4031f8a9.woff2",
-    "index.html": "/index.html",
-    "main.af792597.css.map": "/static/css/main.af792597.css.map",
-    "main.7b6af299.js.map": "/static/js/main.7b6af299.js.map"
+    "main.css": "/UnikueBeauty/static/css/main.1cd43f8a.css",
+    "main.js": "/UnikueBeauty/static/js/main.cfd006cb.js",
+    "static/media/JennHomePage.PNG": "/UnikueBeauty/static/media/JennHomePage.63b4207e486ad62b83e7.PNG",
+    "static/media/MainLogo.PNG": "/UnikueBeauty/static/media/MainLogo.3a69711547fa86786a95.PNG",
+    "static/media/cowboy.PNG": "/UnikueBeauty/static/media/cowboy.98ae33c286d5aa2a351a.PNG",
+    "static/media/sacramento-latin-400-normal.woff": "/UnikueBeauty/static/media/sacramento-latin-400-normal.4005a4a412cdbdaf17c6.woff",
+    "static/media/sacramento-latin-400-normal.woff2": "/UnikueBeauty/static/media/sacramento-latin-400-normal.744cd7b400b875e7a501.woff2",
+    "static/media/dm-sans-latin-400-normal.woff": "/UnikueBeauty/static/media/dm-sans-latin-400-normal.693210afc0f6e924904e.woff",
+    "static/media/sacramento-latin-ext-400-normal.woff": "/UnikueBeauty/static/media/sacramento-latin-ext-400-normal.5d29e4f99f70a6c0c873.woff",
+    "static/media/sacramento-latin-ext-400-normal.woff2": "/UnikueBeauty/static/media/sacramento-latin-ext-400-normal.405c40d51572ad12bc2e.woff2",
+    "static/media/dm-sans-latin-400-normal.woff2": "/UnikueBeauty/static/media/dm-sans-latin-400-normal.d6dd259ebf3e3a66be69.woff2",
+    "static/media/dm-sans-latin-ext-400-normal.woff": "/UnikueBeauty/static/media/dm-sans-latin-ext-400-normal.413af63a119bbef9e8cd.woff",
+    "static/media/cow.PNG": "/UnikueBeauty/static/media/cow.d822149fde4b1e7f0626.PNG",
+    "static/media/dm-sans-latin-ext-400-normal.woff2": "/UnikueBeauty/static/media/dm-sans-latin-ext-400-normal.f65533d614ce4031f8a9.woff2",
+    "index.html": "/UnikueBeauty/index.html",
+    "main.1cd43f8a.css.map": "/UnikueBeauty/static/css/main.1cd43f8a.css.map",
+    "main.cfd006cb.js.map": "/UnikueBeauty/static/js/main.cfd006cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.af792597.css",
-    "static/js/main.7b6af299.js"
+    "static/css/main.1cd43f8a.css",
+    "static/js/main.cfd006cb.js"
   ]
 }
