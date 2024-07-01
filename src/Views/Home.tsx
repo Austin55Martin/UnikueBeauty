@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Divider, Typography } from "@mui/material";
-import { useDynamicViewSizes, useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
+import { useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
 import headshot from "../Gallery/JennHomePage.PNG";
 import { makeStyles } from "tss-react/mui";
 import InstagramCarousel from "../Components/InstagramCarousel";
@@ -38,19 +38,19 @@ const useStyles = makeStyles()(() => ({
   carouselContainer: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: '2rem'
   }
 }));
 
 function Home() {
   const { classes } = useStyles();
-  const dynamicView = useDynamicViewSizes();
   const { IsMobileView } = useDynamicWindowDimensions();
 
   const headerText = "THE SALON";
   const paragraphText =
     "Indulge in a salon experience that leaves you feeling welcomed and radiant, from the moment you book your appointment to the instant you step out with a fresh new style.";
-  const mottoText = "Its your own look that makes you, you!";
+  const mottoText = "It's your own look that makes you, you!";
   const welcomText = `Here, I believe that everyone deserves to feel confident and beautiful. As the sole owner and stylist, I am dedicated to providing personalized hair care tailored to your unique style and needs. Whether you're looking for a fresh cut, vibrant color, or a stunning new look, I am here to make your vision a reality.`
 
   return (

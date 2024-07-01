@@ -25,6 +25,7 @@ const floatingButtonStyle = {
   "&:hover": {
     backgroundColor: "#c99c6f",
   },
+  textTransform: "none"
 };
 
 function App() {
