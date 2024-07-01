@@ -1,7 +1,7 @@
 {
   "name": "UnikueBeauty",
   "version": "0.1.0",
-  "homepage": "https://Austin55Martin.github.io/UnikueBeauty/",
+  "homepage": "https://austin55martin.github.io/UnikueBeauty/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
