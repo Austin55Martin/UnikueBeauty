@@ -6,38 +6,47 @@ import images from "../Utils/ImportAllImages";
 
 const useStyles = makeStyles()(() => ({
   root: {
-    width: "700px", // remove this later when we actually get the images
-    height: "auto"
+    display: "flex",
+    flexDirection: "row",
+    width: '100%',
+    justifyContent: 'center',
+  },
+  carousel: {
+    flex: '1',
+    minWidth: "100px",
+    maxWidth: "700px",
+    height: "auto",
   },
   img: {
     height: "auto",
-    minWidth: "200px",
-    width: "600px",
+    width: "100%",
   },
   skeletion: {
     opacity: ".5",
     width: "350px",
-    height: "400px"
-  }
+    height: "400px",
+  },
 }));
 
 function InstagramCarousel() {
   const { classes } = useStyles();
 
   return (
-    <Carousel
-      autoPlay={true}
-      swipe={true}
-      animation="slide"  
-      duration={500}
-      indicators={false}
-      className={classes.root}
-      fullHeightHover={true}
-    >
-      {Object.keys(images).map((key, i) => (
-        <img key={i} src={images[key]} alt={key} className={classes.img} />
-      ))}
-    </Carousel>
+    <div className={classes.root}>
+      <Carousel
+        autoPlay={true}
+        swipe={true}
+        animation="slide"
+        duration={500}
+        indicators={false}
+        className={classes.carousel}
+        fullHeightHover={true}
+      >
+        {Object.keys(images).map((key, i) => (
+          <img key={i} src={images[key]} alt={key} className={classes.img} />
+        ))}
+      </Carousel>
+    </div>
   );
 }
 
