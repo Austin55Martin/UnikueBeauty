@@ -5,9 +5,21 @@ import { useDynamicWindowDimensions} from "../Theme/DynamicDisplay";
 import MainLogo from "../Gallery/MainLogo.PNG";
 import cowboy from "../Gallery/cowboy.PNG";
 import cow from "../Gallery/cow.PNG";
+import { makeStyles } from "tss-react/mui";
+
+const useStyles = makeStyles()(() => ({
+contactInfoContainer: {
+  display: 'flex',
+  flexDirection: 'column',
+  marginBottom: '.5rem',
+  marginTop: '.5rem',
+  gap: '.25rem'
+}
+}));
 
 function DesktopViewAppBar() {
   let dynamicView = useDynamicWindowDimensions();
+  const { classes } = useStyles();
 
   const buttonStyles = {
     fontFamily: "DM Sans",
@@ -66,7 +78,10 @@ function DesktopViewAppBar() {
         />
       </Box>
       
-      <Typography fontSize='1.25rem' sx={{ textAlign: 'center', fontFamily: 'DM Sans', color: "#554a2e", padding: 1, fontWeight: "600"}}>360-901-6678</Typography>
+      <div className={classes.contactInfoContainer}>
+        <Typography variant="h2" fontSize='1.25rem' sx={{ textAlign: 'center', fontFamily: 'DM Sans', color: "#554a2e", fontWeight: "600"}}>(360) • 901 • 6678</Typography>
+        <Typography variant="h2" fontSize='1.25rem' sx={{ textAlign: 'center', fontFamily: 'DM Sans', color: "#554a2e", fontWeight: "600"}}>Battle Ground • WA</Typography>
+      </div>
       <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', mb: 2}}>
           <Button size={dynamicView.dynamicSizes.buttonSize} variant="text" sx={{ ...buttonStyles }}>Services</Button>
           <Divider orientation="vertical" flexItem sx={{marginRight: '1.5rem', marginLeft: '1.5rem'}}></Divider>
