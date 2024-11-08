@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["webpack-env"],
     "lib": [
       "dom",
       "dom.iterable",
