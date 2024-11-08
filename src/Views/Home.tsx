@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Divider, Typography } from "@mui/material";
-import { useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
 import headshot from "../Gallery/JennHomePage.PNG";
 import { makeStyles } from "tss-react/mui";
 import InstagramCarousel from "../Components/InstagramCarousel";
@@ -10,7 +9,9 @@ const useStyles = makeStyles()(() => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "1.5rem 1.75rem",
+    paddingLeft: "1.75rem",
+    paddingRight: "1.75rem",
+    paddingTop: "1rem",
     gap: "3rem",
   },
   centeredFlexRowBox: {
@@ -24,10 +25,12 @@ const useStyles = makeStyles()(() => ({
   centeredFlexColumnBox: {
     display: "flex",
     flexDirection: "column",
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     //backgroundColor: '#eae5d2',
     backgroundColor: "transparent",
+    padding: "1rem",
   },
   tealBackgroundColor: {
     backgroundColor: "#ccdcc1",
@@ -62,7 +65,6 @@ const useStyles = makeStyles()(() => ({
 
 function Home() {
   const { classes, cx } = useStyles();
-  const { IsMobileView } = useDynamicWindowDimensions();
 
   const headerText = "THE SALON";
   const paragraphText =
@@ -107,18 +109,10 @@ function Home() {
         )}
       >
         <Box
-          className={cx(
-            classes.centeredFlexColumnBox,
-            classes.tealBackgroundColor
-          )}
+          className={cx(classes.centeredFlexColumnBox)}
           sx={{ padding: 0, maxWidth: "800px" }}
         >
-          <Box
-            className={cx(
-              classes.centeredFlexColumnBox,
-              classes.tealBackgroundColor
-            )}
-          >
+          <Box className={cx(classes.centeredFlexColumnBox)}>
             <Typography
               variant="h5"
               className={cx(classes.typographyStyles, classes.headerStyles)}
@@ -126,7 +120,7 @@ function Home() {
               {headerText}
             </Typography>
             <Divider
-              sx={{ width: "100%", marginTop: ".25rem", marginBottom: "1rem" }}
+              sx={{ width: "75%", marginTop: ".25rem", marginBottom: "1rem" }}
             />
           </Box>
           <Typography variant="body1" className={classes.typographyStyles}>

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { makeStyles } from "tss-react/mui";
-import { Skeleton, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import images from "../Utils/ImportAllImages";
 
@@ -8,11 +7,11 @@ const useStyles = makeStyles()(() => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    width: '100%',
-    justifyContent: 'center',
+    width: "100%",
+    justifyContent: "center",
   },
   carousel: {
-    flex: '1',
+    flex: "1",
     minWidth: "100px",
     maxWidth: "700px",
     height: "auto",
