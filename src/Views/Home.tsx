@@ -81,6 +81,7 @@ function Home() {
             className={classes.typographyStyles}
             sx={{ fontSize: "1.25rem", fontWeight: "600" }}
           >
+            {"Womp! Testing Deployment Script!"}
             {"Welcome to Unikue Beauty Hair Salon!"}
           </Typography>
           <br />
