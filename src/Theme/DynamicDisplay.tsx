@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useTheme } from "@mui/material";
 import { viewportWidthState } from "../Atoms/DynamicDisplayAtoms";
@@ -49,18 +49,19 @@ export function useDynamicViewSizes() {
 }
 
 export function useDynamicWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useRecoilState(viewportWidthState);
+  const [_, setWindowDimensions] = useRecoilState(viewportWidthState);
   let dynamicSizes = useDynamicViewSizes();
 
   function windowResizeCallback() {
-    setWindowDimensions(window.innerWidth)
+    setWindowDimensions(window.innerWidth);
   }
+
   useEffect(() => {
     window.addEventListener("resize", windowResizeCallback);
 
     // remove the listener when we unmount
     return () => window.removeEventListener("resize", windowResizeCallback);
-  }, []);
+  }, [windowResizeCallback]);
 
   return { IsMobileView, dynamicSizes };
 }

@@ -75,7 +75,7 @@ function Home() {
   return (
     <div className={classes.root}>
       <Box className={classes.centeredFlexRowBox}>
-        <img src={headshot} className={classes.headshotImg} />
+        <img alt="" src={headshot} className={classes.headshotImg} />
         <Box className={classes.welcomeTextContainer}>
           <Typography
             className={classes.typographyStyles}
