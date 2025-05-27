@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/UnikueBeauty/static/css/main.1cd43f8a.css",
-    "main.js": "/UnikueBeauty/static/js/main.3b43fafb.js",
+    "main.js": "/UnikueBeauty/static/js/main.f82c295a.js",
     "static/media/JennHomePage.PNG": "/UnikueBeauty/static/media/JennHomePage.63b4207e486ad62b83e7.PNG",
     "static/media/449213397___n.jpg": "/UnikueBeauty/static/media/449213397_1199230697778650_1342351892769047797_n.2f6da25600db1410a67e.jpg",
     "static/media/348638400_237558968887560__n.jpg": "/UnikueBeauty/static/media/348638400_237558968887560_2506144335324010385_n.cefb16b2f0f2525fd170.jpg",
@@ -34,10 +34,10 @@
     "static/media/dm-sans-latin-ext-400-normal.woff2": "/UnikueBeauty/static/media/dm-sans-latin-ext-400-normal.f65533d614ce4031f8a9.woff2",
     "index.html": "/UnikueBeauty/index.html",
     "main.1cd43f8a.css.map": "/UnikueBeauty/static/css/main.1cd43f8a.css.map",
-    "main.3b43fafb.js.map": "/UnikueBeauty/static/js/main.3b43fafb.js.map"
+    "main.f82c295a.js.map": "/UnikueBeauty/static/js/main.f82c295a.js.map"
   },
   "entrypoints": [
     "static/css/main.1cd43f8a.css",
-    "static/js/main.3b43fafb.js"
+    "static/js/main.f82c295a.js"
   ]
 }
