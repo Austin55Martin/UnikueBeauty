@@ -49,19 +49,19 @@ export function useDynamicViewSizes() {
 }
 
 export function useDynamicWindowDimensions() {
-  const [_, setWindowDimensions] = useRecoilState(viewportWidthState);
+  const [, setWindowDimensions] = useRecoilState(viewportWidthState);
   let dynamicSizes = useDynamicViewSizes();
 
-  function windowResizeCallback() {
-    setWindowDimensions(window.innerWidth);
-  }
-
   useEffect(() => {
+    function windowResizeCallback() {
+      setWindowDimensions(window.innerWidth);
+    }
+
     window.addEventListener("resize", windowResizeCallback);
 
     // remove the listener when we unmount
     return () => window.removeEventListener("resize", windowResizeCallback);
-  }, [windowResizeCallback]);
+  }, [setWindowDimensions]);
 
   return { IsMobileView, dynamicSizes };
 }
