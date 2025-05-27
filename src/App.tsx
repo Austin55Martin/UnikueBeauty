@@ -7,11 +7,13 @@ import { Fab } from "@mui/material";
 import "@fontsource/dm-sans";
 import "@fontsource/sacramento";
 import FooterAppBar from "./Components/FooterAppBar";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./Theme/Theme";
 
 const mainAppStyles = {
   //backgroundColor: "#f2f2f2"
-  backgroundColor: '#eae5d2'
-}
+  backgroundColor: "#eae5d2",
+};
 
 const floatingButtonStyle = {
   position: "fixed",
@@ -21,35 +23,31 @@ const floatingButtonStyle = {
   left: "auto",
   color: "white",
   backgroundColor: "#b48c64",
-  fontFamily: "DM Sans",
   "&:hover": {
     backgroundColor: "#c99c6f",
   },
-  textTransform: "none"
+  textTransform: "none",
 };
 
 function App() {
-  
   return (
-    <div style={mainAppStyles}>
-      <RecoilRoot>
-        <TopAppBar />
-        <Fab
-          variant="extended"
-          size="large"
-          sx={{ ...floatingButtonStyle }}
-        >
-          Book Now
-        </Fab>
-        <Routes>
-          <Route path="/" element={<Home />} />
+    <ThemeProvider theme={theme}>
+      <div style={mainAppStyles}>
+        <RecoilRoot>
+          <TopAppBar />
+          <Fab variant="extended" size="large" sx={{ ...floatingButtonStyle }}>
+            Book Now
+          </Fab>
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-          {/* Bad route view
+            {/* Bad route view
           <Route path="*" element={<NoMatch />} /> */}
-        </Routes>
-        <FooterAppBar />
-      </RecoilRoot>
-    </div>
+          </Routes>
+          <FooterAppBar />
+        </RecoilRoot>
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,8 +1,6 @@
 import React from "react";
 import "@fontsource/dm-sans";
-import {
-  useDynamicWindowDimensions,
-} from "../Theme/DynamicDisplay";
+import { useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
 import DesktopViewAppBar from "./DesktopViewAppBar";
 import MobileViewAppBar from "./MobileViewAppBar";
 

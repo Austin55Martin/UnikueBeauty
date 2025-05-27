@@ -4,7 +4,7 @@ import headshot from "../Gallery/JennHomePage.PNG";
 import { makeStyles } from "tss-react/mui";
 import InstagramCarousel from "../Components/InstagramCarousel";
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -36,7 +36,7 @@ const useStyles = makeStyles()(() => ({
     backgroundColor: "#ccdcc1",
   },
   typographyStyles: {
-    fontFamily: "DM Sans",
+    //fontFamily: theme.typography.fontFamily,
     wordWrap: "break-word",
     marginBottom: ".25rem",
   },

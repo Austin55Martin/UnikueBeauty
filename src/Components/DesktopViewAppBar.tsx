@@ -112,7 +112,6 @@ function DesktopViewAppBar() {
           fontSize="1.25rem"
           sx={{
             textAlign: "center",
-            fontFamily: "DM Sans",
             color: "#554a2e",
             fontWeight: "600",
           }}
@@ -124,7 +123,6 @@ function DesktopViewAppBar() {
           fontSize="1.25rem"
           sx={{
             textAlign: "center",
-            fontFamily: "DM Sans",
             color: "#554a2e",
             fontWeight: "600",
           }}
