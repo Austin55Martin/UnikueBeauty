@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/UnikueBeauty/static/css/main.1cd43f8a.css",
-    "main.js": "/UnikueBeauty/static/js/main.e700577e.js",
+    "main.js": "/UnikueBeauty/static/js/main.672b02b1.js",
     "static/media/JennHomePage.PNG": "/UnikueBeauty/static/media/JennHomePage.63b4207e486ad62b83e7.PNG",
     "static/media/449213397___n.jpg": "/UnikueBeauty/static/media/449213397_1199230697778650_1342351892769047797_n.2f6da25600db1410a67e.jpg",
     "static/media/348638400_237558968887560__n.jpg": "/UnikueBeauty/static/media/348638400_237558968887560_2506144335324010385_n.cefb16b2f0f2525fd170.jpg",
@@ -17,7 +17,6 @@
     "static/media/336275035___n.jpg": "/UnikueBeauty/static/media/336275035_1188752015345390_9207786900426583051_n.93c91d6c64b932863773.jpg",
     "static/media/345412146___n.jpg": "/UnikueBeauty/static/media/345412146_1921178148266255_6477680549633888279_n.6b28156e5888523e1046.jpg",
     "static/media/351440521_216348811246473__n.jpg": "/UnikueBeauty/static/media/351440521_216348811246473_4798077350621007449_n.b565ba291319010ae6b0.jpg",
-    "static/media/387681353_155715320949869__n.jpg": "/UnikueBeauty/static/media/387681353_155715320949869_4743085401669741651_n.aac252783305a4ee5074.jpg",
     "static/media/447773120_982297270151165__n.jpg": "/UnikueBeauty/static/media/447773120_982297270151165_5893748922739546477_n.3c84b8d8ff6e28533512.jpg",
     "static/media/441539935_844491744185060__n.jpg": "/UnikueBeauty/static/media/441539935_844491744185060_633814049284305013_n.772be5afad64e14126ea.jpg",
     "static/media/448732180_781222870499327__n.jpg": "/UnikueBeauty/static/media/448732180_781222870499327_820159061205210192_n.2658f2d088ff37d9ef34.jpg",
@@ -34,10 +33,10 @@
     "static/media/dm-sans-latin-ext-400-normal.woff2": "/UnikueBeauty/static/media/dm-sans-latin-ext-400-normal.f65533d614ce4031f8a9.woff2",
     "index.html": "/UnikueBeauty/index.html",
     "main.1cd43f8a.css.map": "/UnikueBeauty/static/css/main.1cd43f8a.css.map",
-    "main.e700577e.js.map": "/UnikueBeauty/static/js/main.e700577e.js.map"
+    "main.672b02b1.js.map": "/UnikueBeauty/static/js/main.672b02b1.js.map"
   },
   "entrypoints": [
     "static/css/main.1cd43f8a.css",
-    "static/js/main.e700577e.js"
+    "static/js/main.672b02b1.js"
   ]
 }
