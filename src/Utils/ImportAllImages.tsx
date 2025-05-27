@@ -1,9 +1,7 @@
 // This is a helper to handle importing multiple images from a folder
 function importAll(r: __WebpackModuleApi.RequireContext) {
   let images: Record<string, string> = {};
-  r.keys().map((item, _) => {
-    images[item.replace("./", "")] = r(item);
-  });
+  r.keys().map((item, _) => (images[item.replace("./", "")] = r(item)));
   return images;
 }
 
