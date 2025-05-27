@@ -23,6 +23,9 @@ export const theme = createTheme({
   typography: {
     fontFamily: `"DM Sans", sans-serif`,
   },
+  palette: {
+    divider: "#3d3d3d",
+  },
   displaySettings: {
     sm: { variant: "h6", fontSize: "0.875rem", buttonSize: "small" },
     md: { variant: "h4", fontSize: "1rem", buttonSize: "medium" },

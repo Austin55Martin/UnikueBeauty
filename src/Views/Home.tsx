@@ -36,15 +36,18 @@ const useStyles = makeStyles()((theme) => ({
     backgroundColor: "#ccdcc1",
   },
   typographyStyles: {
-    //fontFamily: theme.typography.fontFamily,
     wordWrap: "break-word",
-    marginBottom: ".25rem",
   },
-  headerStyles: {
+  subHeaderStyles: {
     letterSpacing: ".15rem",
     fontSize: "20px",
     marginBottom: ".75rem",
     fontWeight: "600",
+  },
+  headerStyle: {
+    letterSpacing: ".15rem",
+    fontFamily: "Georgia",
+    fontSize: "2rem",
   },
   headshotImg: {
     height: "auto",
@@ -61,10 +64,15 @@ const useStyles = makeStyles()((theme) => ({
     maxWidth: "650px",
     height: "auto",
   },
+  divider: {
+    width: "100%",
+    height: "3px",
+    borderColor: theme.palette.divider,
+  },
 }));
 
 function Home() {
-  const { classes, cx } = useStyles();
+  const { classes, theme, cx } = useStyles();
 
   const headerText = "THE SALON";
   const paragraphText =
@@ -77,10 +85,7 @@ function Home() {
       <Box className={classes.centeredFlexRowBox}>
         <img alt="" src={headshot} className={classes.headshotImg} />
         <Box className={classes.welcomeTextContainer}>
-          <Typography
-            className={classes.typographyStyles}
-            sx={{ fontSize: "1.25rem", fontWeight: "600" }}
-          >
+          <Typography className={classes.headerStyle}>
             {"Welcome to Unikue Beauty Hair Salon!"}
           </Typography>
           <br />
@@ -101,6 +106,10 @@ function Home() {
           </Typography>
         </Box>
       </Box>
+      <Divider className={classes.divider} />
+      <Typography className={classes.headerStyle}>
+        See what's possible
+      </Typography>
       <InstagramCarousel />
       <div
         className={cx(
@@ -115,12 +124,17 @@ function Home() {
           <Box className={cx(classes.centeredFlexColumnBox)}>
             <Typography
               variant="h5"
-              className={cx(classes.typographyStyles, classes.headerStyles)}
+              className={cx(classes.typographyStyles, classes.subHeaderStyles)}
             >
               {headerText}
             </Typography>
             <Divider
-              sx={{ width: "75%", marginTop: ".25rem", marginBottom: "1rem" }}
+              sx={{
+                backgroundColor: theme.palette.divider,
+                width: "50%",
+                marginTop: ".25rem",
+                marginBottom: "1rem",
+              }}
             />
           </Box>
           <Typography variant="body1" className={classes.typographyStyles}>
