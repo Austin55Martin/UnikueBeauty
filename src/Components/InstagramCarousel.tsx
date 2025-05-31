@@ -37,7 +37,7 @@ function InstagramCarousel() {
         swipe={true}
         animation="slide"
         duration={500}
-        indicators={false}
+        indicators={true}
         className={classes.carousel}
         fullHeightHover={true}
       >

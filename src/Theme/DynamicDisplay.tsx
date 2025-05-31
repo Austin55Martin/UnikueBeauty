@@ -34,14 +34,15 @@ export function useDynamicWindowDimensions() {
   let dynamicSizes = useDynamicViewSizes();
 
   useEffect(() => {
-    function windowResizeCallback() {
-      setWindowDimensions(window.innerWidth);
-    }
-
-    window.addEventListener("resize", windowResizeCallback);
+    window.addEventListener("resize", () =>
+      setWindowDimensions(window.innerWidth)
+    );
 
     // remove the listener when we unmount
-    return () => window.removeEventListener("resize", windowResizeCallback);
+    return () =>
+      window.removeEventListener("resize", () =>
+        setWindowDimensions(window.innerWidth)
+      );
   }, [setWindowDimensions]);
 
   return { IsMobileView, dynamicSizes };

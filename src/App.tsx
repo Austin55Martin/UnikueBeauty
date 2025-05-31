@@ -9,6 +9,7 @@ import "@fontsource/sacramento";
 import FooterAppBar from "./Components/FooterAppBar";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Theme/Theme";
+import ScheduleView from "./Views/Schedule";
 
 const mainAppStyles = {
   //backgroundColor: "#f2f2f2"
@@ -40,7 +41,7 @@ function App() {
           </Fab>
           <Routes>
             <Route path="/" element={<Home />} />
-
+            <Route path="/Schedule" element={<ScheduleView />} />
             {/* Bad route view
           <Route path="*" element={<NoMatch />} /> */}
           </Routes>
