@@ -1,7 +1,7 @@
 import React from "react";
 import TopAppBar from "./Components/TopAppBar";
 import { RecoilRoot } from "recoil";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Views/Home";
 import { Fab } from "@mui/material";
 import "@fontsource/dm-sans";
@@ -10,33 +10,41 @@ import FooterAppBar from "./Components/FooterAppBar";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Theme/Theme";
 import ServicesView from "./Views/ServicesView";
+import { makeStyles } from "tss-react/mui";
 
-const mainAppStyles = {
-  //backgroundColor: "#f2f2f2"
-  backgroundColor: "#eae5d2",
-};
-
-const floatingButtonStyle = {
-  position: "fixed",
-  right: "1.25rem",
-  bottom: "1.25rem",
-  top: "auto",
-  left: "auto",
-  color: "white",
-  backgroundColor: "#b48c64",
-  "&:hover": {
-    backgroundColor: "#c99c6f",
+const useStyles = makeStyles()((theme) => ({
+  mainAppStyles: {
+    //backgroundColor: "#f2f2f2"
+    backgroundColor: "#eae5d2",
   },
-  textTransform: "none",
-};
+  floatingButtonStyle: {
+    position: "fixed",
+    right: "1.25rem",
+    bottom: "1.25rem",
+    top: "auto",
+    left: "auto",
+    color: "white",
+    backgroundColor: "#b48c64",
+    "&:hover": {
+      backgroundColor: "#c99c6f",
+    },
+    textTransform: "none",
+  },
+}));
 
 function App() {
+  const { classes } = useStyles();
+
   return (
     <ThemeProvider theme={theme}>
-      <div style={mainAppStyles}>
+      <div className={classes.mainAppStyles}>
         <RecoilRoot>
           <TopAppBar />
-          <Fab variant="extended" size="large" sx={{ ...floatingButtonStyle }}>
+          <Fab
+            variant="extended"
+            size="large"
+            className={classes.floatingButtonStyle}
+          >
             Book Now
           </Fab>
           <Routes>

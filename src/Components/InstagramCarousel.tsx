@@ -7,7 +7,7 @@ const useStyles = makeStyles()(() => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    width: "100%",
+    width: "40%",
     justifyContent: "center",
   },
   carousel: {
