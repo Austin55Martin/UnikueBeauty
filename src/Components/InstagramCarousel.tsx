@@ -7,13 +7,13 @@ const useStyles = makeStyles()(() => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    width: "40%",
+    width: "100%",
     justifyContent: "center",
   },
   carousel: {
     flex: "1",
     minWidth: "100px",
-    maxWidth: "700px",
+    maxWidth: "500px",
     height: "auto",
   },
   img: {
