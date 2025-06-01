@@ -15,6 +15,8 @@ import "@fontsource/dm-sans";
 import InfoIcon from "@mui/icons-material/Info";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import { useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -26,17 +28,33 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const IconDictionary = {
+  Home: <HomeIcon />,
   Services: <MenuBookIcon />,
   Gallery: <CollectionsIcon />,
   About: <InfoIcon />,
 };
 
-function SideDrawerList(): React.JSX.Element {
+type Props = {
+  toggleDrawer: (open: boolean) => (event: any) => void;
+};
+
+function SideDrawerList({ toggleDrawer }: Props) {
+  const navigate = useNavigate();
+
+  const handleDrawerAndNavigate =
+    (path: string) => (event: React.MouseEvent) => {
+      toggleDrawer(false)(event);
+      navigate(path === "Home" ? "/" : `/${path.toLowerCase()}`);
+    };
+
   return (
     <List>
       {Object.entries(IconDictionary).map(([text, icon]) => (
         <ListItem disablePadding={true}>
-          <ListItemButton style={{ margin: "8px 0px", height: "3.5rem" }}>
+          <ListItemButton
+            onClick={handleDrawerAndNavigate(text)}
+            style={{ margin: "8px 0px", height: "3.5rem" }}
+          >
             <ListItemIcon sx={{ color: "#1f1f1f" }}>{icon}</ListItemIcon>
             <ListItemText
               primary={text}
@@ -111,7 +129,7 @@ export default function SideDrawerButtonToggle() {
           </Typography>
         </DrawerHeader>
         <Divider sx={{ margin: "4px 0px" }} />
-        <SideDrawerList />
+        <SideDrawerList toggleDrawer={toggleDrawer} />
       </Drawer>
     </>
   );

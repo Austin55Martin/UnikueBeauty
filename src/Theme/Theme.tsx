@@ -25,6 +25,9 @@ export const theme = createTheme({
   },
   palette: {
     divider: "#3d3d3d",
+    background: {
+      default: "#f2f2f2",
+    },
   },
   displaySettings: {
     sm: { variant: "h6", fontSize: "0.875rem", buttonSize: "small" },
