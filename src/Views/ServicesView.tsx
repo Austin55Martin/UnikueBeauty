@@ -3,10 +3,10 @@ import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()((theme) => ({}));
 
-function ScheduleView() {
+function ServicesView() {
   const { classes, theme } = useStyles();
 
   return <>Hello world!</>;
 }
 
-export default ScheduleView;
+export default ServicesView;

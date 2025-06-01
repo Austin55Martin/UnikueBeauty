@@ -33,7 +33,6 @@ function InstagramCarousel() {
   return (
     <div className={classes.root}>
       <Carousel
-        autoPlay={true}
         swipe={true}
         animation="slide"
         duration={500}
