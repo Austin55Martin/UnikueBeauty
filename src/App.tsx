@@ -8,7 +8,6 @@ import "@fontsource/sacramento";
 import FooterAppBar from "./Components/FooterAppBar";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Theme/Theme";
-import ServicesView from "./Views/ServicesView";
 import { makeStyles } from "tss-react/mui";
 import BookNowFab from "./Components/BookNowFab";
 
