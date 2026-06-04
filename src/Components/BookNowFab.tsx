@@ -1,6 +1,8 @@
 import React from "react";
 import { Fab, useMediaQuery, useTheme } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
+import { useRecoilState } from "recoil";
+import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
 
 const useStyles = makeStyles()((theme) => ({
   floatingButtonStyle: {
@@ -23,6 +25,7 @@ function BookNowFab() {
   const { classes } = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const setShowServicesMenu = useRecoilState(showServicesMenu)[1];
 
   if (!isMobile) {
     return null;
@@ -33,6 +36,7 @@ function BookNowFab() {
       variant="extended"
       size="large"
       className={classes.floatingButtonStyle}
+      onClick={() => setShowServicesMenu(true)}
     >
       Schedule
     </Fab>
