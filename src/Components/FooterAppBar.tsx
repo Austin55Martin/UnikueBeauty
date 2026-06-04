@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MainLogo from "../Gallery/MainLogo.PNG";
 import { ButtonGroup, Button, IconButton, Typography } from "@mui/material";
 
@@ -32,11 +32,11 @@ const useStyles = makeStyles()(() => ({
     color: "transparent",
     "& .MuiButtonGroup-firstButton": {
       borderRight: "none",
-      marginRight: "2rem"
+      marginRight: "2rem",
     },
     "& .MuiButtonGroup-middleButton": {
       borderRight: "none",
-      marginRight: "2rem"
+      marginRight: "2rem",
     },
   },
   links: {
@@ -46,18 +46,17 @@ const useStyles = makeStyles()(() => ({
     textTransform: "none",
   },
   socialIcons: {
-    color: "#f2f2f2", 
-    fontSize: "1.5rem"
+    color: "#f2f2f2",
+    fontSize: "1.5rem",
   },
   copyright: {
     fontFamily: "DM Sans",
     fontSize: ".75rem",
     color: "#f2f2f2",
-    opacity: ".5"
+    opacity: ".5",
   },
 }));
 
-;
 function FooterAppBar() {
   const { classes } = useStyles();
 
@@ -67,20 +66,36 @@ function FooterAppBar() {
         <img id="logo" alt="" className={classes.logo} src={MainLogo} />
       </div>
       <div className={classes.linkContainer}>
-        <ButtonGroup variant="text" disableFocusRipple className={classes.buttonGroup}>
+        <ButtonGroup
+          variant="text"
+          disableFocusRipple
+          className={classes.buttonGroup}
+        >
           <Button className={classes.links}>Link 1</Button>
           <Button className={classes.links}>Link 2</Button>
           <Button className={classes.links}>Link 3</Button>
         </ButtonGroup>
       </div>
       <div className={classes.linkContainer}>
-        <ButtonGroup variant="text" disableFocusRipple className={classes.buttonGroup}>
-            <IconButton><InstagramIcon className={classes.socialIcons}/></IconButton>
-            <IconButton><FacebookIcon className={classes.socialIcons}/></IconButton>
-            <IconButton><LinkedInIcon className={classes.socialIcons}/></IconButton>
+        <ButtonGroup
+          variant="text"
+          disableFocusRipple
+          className={classes.buttonGroup}
+        >
+          <IconButton>
+            <InstagramIcon className={classes.socialIcons} />
+          </IconButton>
+          <IconButton>
+            <FacebookIcon className={classes.socialIcons} />
+          </IconButton>
+          <IconButton>
+            <LinkedInIcon className={classes.socialIcons} />
+          </IconButton>
         </ButtonGroup>
       </div>
-      <Typography className={classes.copyright}>&copy; 2024 Unikue Beauty. All rights reserved.</Typography>
+      <Typography className={classes.copyright}>
+        &copy; {new Date().getFullYear()} Unikue Beauty. All rights reserved.
+      </Typography>
     </div>
   );
 }
