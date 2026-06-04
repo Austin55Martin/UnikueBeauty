@@ -59,6 +59,14 @@ const useStyles = makeStyles()((theme) => ({
     display: "flex",
     zIndex: 10,
     imageRendering: "crisp-edges",
+    [theme.breakpoints.down("md")]: {
+      width: "250px",
+      minWidth: "150px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "200px",
+      minWidth: "150px",
+    },
   },
   welcomeTextContainer: {
     display: "flex",

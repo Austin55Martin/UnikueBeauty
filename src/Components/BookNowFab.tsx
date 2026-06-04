@@ -15,6 +15,7 @@ const useStyles = makeStyles()((theme) => ({
       backgroundColor: "#c99c6f",
     },
     textTransform: "none",
+    padding: "0.5rem 1.5rem",
   },
 }));
 
@@ -33,7 +34,7 @@ function BookNowFab() {
       size="large"
       className={classes.floatingButtonStyle}
     >
-      Book Now
+      Schedule
     </Fab>
   );
 }

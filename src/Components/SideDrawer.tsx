@@ -50,7 +50,9 @@ function SideDrawerList({ toggleDrawer }: Props) {
   const handleDrawerAndNavigate =
     (path: string) => (event: React.MouseEvent) => {
       toggleDrawer(false)(event);
-      navigate(path === "Home" ? "/" : `/${path.toLowerCase()}`);
+      navigate(
+        path === "Home" || path === "Services" ? "/" : `/${path.toLowerCase()}`,
+      );
     };
 
   return (

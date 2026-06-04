@@ -27,9 +27,9 @@ const useStyles = makeStyles()(() => ({
     zIndex: "10",
   },
   cowImgDiv: {
-    height: "45px",
+    height: "3rem",
     position: "absolute",
-    right: "5%",
+    right: "7%",
     top: "5rem",
   },
   img: {
