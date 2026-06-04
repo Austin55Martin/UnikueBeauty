@@ -3,6 +3,9 @@ import { Box, Divider, Typography } from "@mui/material";
 import headshot from "../Gallery/JennHomePage.PNG";
 import { makeStyles } from "tss-react/mui";
 import InstagramCarousel from "../Components/InstagramCarousel";
+import { useRecoilState } from "recoil";
+import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
+import ServicesView from "./ServicesView";
 
 const useStyles = makeStyles()((theme) => ({
   root: {
@@ -73,6 +76,7 @@ const useStyles = makeStyles()((theme) => ({
 
 function Home() {
   const { classes, theme, cx } = useStyles();
+  const [showServices, setShowServices] = useRecoilState(showServicesMenu);
 
   const headerText = "THE SALON";
   const paragraphText =
@@ -82,6 +86,12 @@ function Home() {
 
   return (
     <div className={classes.root}>
+      {showServices && (
+        <ServicesView
+          open={showServices}
+          onClose={() => setShowServices(false)}
+        />
+      )}
       <Box className={classes.centeredFlexRowBox}>
         <img alt="" src={headshot} className={classes.headshotImg} />
         <Box className={classes.welcomeTextContainer}>
@@ -114,7 +124,7 @@ function Home() {
       <div
         className={cx(
           classes.centeredFlexColumnBox,
-          classes.tealBackgroundColor
+          classes.tealBackgroundColor,
         )}
       >
         <Box

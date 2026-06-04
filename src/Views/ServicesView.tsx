@@ -1,5 +1,5 @@
-import { Box, IconButton, Modal, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, IconButton, Modal } from "@mui/material";
+import React from "react";
 import { makeStyles } from "tss-react/mui";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -24,19 +24,20 @@ const useStyles = makeStyles()((theme) => ({
   },
 }));
 
-function ServicesView() {
+type Props = {
+  open: boolean;
+  onClose: () => void;
+};
+
+function ServicesView({ open, onClose }: Props) {
   const { classes } = useStyles();
-  const [open, setOpen] = useState(true);
+
   return (
-    <Modal open={open} onClose={() => setOpen(false)}>
+    <Modal open={open} onClose={onClose}>
       <Box className={classes.root}>
         <Box className={classes.header}>
-          <IconButton>
-            <CloseIcon
-              onClick={() => setOpen(false)}
-              fontSize="large"
-              sx={{ color: "#1f1f1f" }}
-            />
+          <IconButton onClick={onClose}>
+            <CloseIcon fontSize="large" sx={{ color: "#1f1f1f" }} />
           </IconButton>
         </Box>
         <iframe

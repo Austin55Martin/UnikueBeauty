@@ -17,6 +17,8 @@ import CollectionsIcon from "@mui/icons-material/Collections";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
+import { useRecoilState } from "recoil";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -27,19 +29,23 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "space-between",
 }));
 
-const IconDictionary = {
-  Home: <HomeIcon />,
-  Services: <MenuBookIcon />,
-  Gallery: <CollectionsIcon />,
-  About: <InfoIcon />,
-};
-
 type Props = {
   toggleDrawer: (open: boolean) => (event: any) => void;
 };
 
 function SideDrawerList({ toggleDrawer }: Props) {
   const navigate = useNavigate();
+  const setShowServicesMenuState = useRecoilState(showServicesMenu)[1];
+
+  const IconDictionary = {
+    Home: { icon: <HomeIcon />, onClick: null },
+    Services: {
+      icon: <MenuBookIcon />,
+      onClick: () => setShowServicesMenuState(true),
+    },
+    Gallery: { icon: <CollectionsIcon />, onClick: null },
+    About: { icon: <InfoIcon />, onClick: null },
+  };
 
   const handleDrawerAndNavigate =
     (path: string) => (event: React.MouseEvent) => {
@@ -49,7 +55,7 @@ function SideDrawerList({ toggleDrawer }: Props) {
 
   return (
     <List>
-      {Object.entries(IconDictionary).map(([text, icon]) => (
+      {Object.entries(IconDictionary).map(([text, { icon, onClick }]) => (
         <ListItem disablePadding={true}>
           <ListItemButton
             onClick={handleDrawerAndNavigate(text)}
@@ -64,6 +70,7 @@ function SideDrawerList({ toggleDrawer }: Props) {
                 fontWeight: "bold",
                 textTransform: "none",
               }}
+              onClick={() => onClick && onClick()}
             />
           </ListItemButton>
         </ListItem>

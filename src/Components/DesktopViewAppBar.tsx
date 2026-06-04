@@ -7,6 +7,8 @@ import cowboy from "../Gallery/cowboy.PNG";
 import cow from "../Gallery/cow.PNG";
 import { makeStyles } from "tss-react/mui";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
 
 const useStyles = makeStyles()((theme) => ({
   contactInfoContainer: {
@@ -80,6 +82,7 @@ function DesktopViewAppBar() {
   let dynamicView = useDynamicWindowDimensions();
   const navigate = useNavigate();
   const { classes } = useStyles();
+  const setShowServicesMenu = useRecoilState(showServicesMenu)[1];
 
   return (
     <AppBar position="static" className={classes.appBar}>
@@ -122,7 +125,7 @@ function DesktopViewAppBar() {
           size={dynamicView.dynamicSizes.buttonSize}
           variant="text"
           className={classes.button}
-          onClick={() => navigate("/services")}
+          onClick={() => setShowServicesMenu(true)}
         >
           Services
         </Button>
