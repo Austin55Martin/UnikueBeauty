@@ -54,12 +54,10 @@ const useStyles = makeStyles()((theme) => ({
   img: {
     maxWidth: "100%",
     height: "100%",
-    imageRendering: "crisp-edges",
   },
   cowImg: {
     maxWidth: "70%",
     height: "100%",
-    imageRendering: "crisp-edges",
   },
   text: {
     textAlign: "center",

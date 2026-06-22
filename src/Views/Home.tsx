@@ -58,7 +58,6 @@ const useStyles = makeStyles()((theme) => ({
     width: "350px",
     display: "flex",
     zIndex: 10,
-    imageRendering: "crisp-edges",
     [theme.breakpoints.down("md")]: {
       width: "250px",
       minWidth: "150px",

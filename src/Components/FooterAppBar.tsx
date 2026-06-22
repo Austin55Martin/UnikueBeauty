@@ -22,7 +22,6 @@ const useStyles = makeStyles()(() => ({
   logo: {
     maxWidth: "100%",
     height: "100%",
-    imageRendering: "crisp-edges",
   },
   linkContainer: {
     display: "flex",

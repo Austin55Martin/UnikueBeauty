@@ -35,7 +35,6 @@ const useStyles = makeStyles()(() => ({
   img: {
     maxWidth: "100%",
     height: "100%",
-    imageRendering: "crisp-edges",
   },
   toolbar: {
     width: "100%",
