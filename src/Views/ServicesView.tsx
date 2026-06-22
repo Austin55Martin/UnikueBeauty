@@ -10,7 +10,8 @@ const useStyles = makeStyles()((theme) => ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -55%)",
-    width: "80%",
+    width: "60%",
+    mindWidth: "600px",
     height: "80vh",
     backgroundColor: theme.palette.background.paper,
     boxShadow: "24",
@@ -26,23 +27,30 @@ const useStyles = makeStyles()((theme) => ({
     backgroundColor: theme.palette.background.paper,
     borderRadius: 0,
     overflow: "hidden",
+    animation: "slideInRight 0.2s ease-in-out",
+    "@keyframes slideInRight": {
+      from: { transform: "translateX(100%)" },
+      to: { transform: "translateX(0)" },
+    },
   },
   header: {
     backgroundColor: theme.palette.background.default,
     display: "flex",
     width: "100%",
     height: "60px",
-    justifyContent: "flex-end",
     alignItems: "center",
   },
-  mobileHeader: {
-    backgroundColor: theme.palette.background.default,
-    display: "flex",
-    width: "100%",
-    height: "60px",
+  headerDesktop: {
+    justifyContent: "flex-end",
+  },
+  headerMobile: {
     justifyContent: "flex-start",
-    alignItems: "center",
     paddingLeft: "1rem",
+  },
+  iframe: {
+    width: "100%",
+    height: "calc(100% - 60px)",
+    border: "none",
   },
 }));
 
@@ -52,54 +60,31 @@ type Props = {
 };
 
 function ServicesView({ open, onClose }: Props) {
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  if (isMobile) {
-    return (
-      <Modal open={open} onClose={onClose}>
-        <Box
-          sx={{
-            animation: "slideInRight 0.2s ease-in-out",
-            "@keyframes slideInRight": {
-              from: { transform: "translateX(100%)" },
-              to: { transform: "translateX(0)" },
-            },
-          }}
-          className={classes.mobileRoot}
-        >
-          <Box className={classes.mobileHeader}>
-            <IconButton onClick={onClose}>
-              <ArrowBackIcon fontSize="medium" sx={{ color: "#1f1f1f" }} />
-            </IconButton>
-          </Box>
-          <iframe
-            src="https://book.squareup.com/appointments/futz20cutwfvkg/location/LRBCSPHZEY29G/services"
-            style={{
-              width: "100%",
-              height: "calc(100% - 60px)",
-              border: "none",
-            }}
-            title="Book Appointment"
-            allow="payment"
-          />
-        </Box>
-      </Modal>
-    );
-  }
+  const boxClass = isMobile ? classes.mobileRoot : classes.root;
+  const headerClass = cx(
+    classes.header,
+    isMobile ? classes.headerMobile : classes.headerDesktop,
+  );
+  const CloseButtonIcon = isMobile ? ArrowBackIcon : CloseIcon;
 
   return (
     <Modal open={open} onClose={onClose}>
-      <Box className={classes.root}>
-        <Box className={classes.header}>
+      <Box className={boxClass}>
+        <Box className={headerClass}>
           <IconButton onClick={onClose}>
-            <CloseIcon fontSize="large" sx={{ color: "#1f1f1f" }} />
+            <CloseButtonIcon
+              fontSize={isMobile ? "medium" : "large"}
+              sx={{ color: "#1f1f1f" }}
+            />
           </IconButton>
         </Box>
         <iframe
           src="https://book.squareup.com/appointments/futz20cutwfvkg/location/LRBCSPHZEY29G/services"
-          style={{ width: "100%", height: "100%", border: "none" }}
+          className={classes.iframe}
           title="Book Appointment"
           allow="payment"
         />
