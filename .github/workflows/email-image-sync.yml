@@ -35,5 +35,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A src/Gallery
-          git diff --staged --quiet || git commit -m "chore: add images from email [skip ci]"
+          git diff --staged --quiet || git commit -m "chore: add images from email"
           git push
