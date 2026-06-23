@@ -1,0 +1,39 @@
+name: Email Image Sync
+
+on:
+  schedule:
+    - cron: "*/15 * * * *" # Runs every 15 minutes
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  fetch-images:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Needed to push commits
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pillow
+
+      - name: Run image fetch script
+        env:
+          EMAIL_ADDRESS: ${{ secrets.PHOTO_BOT_EMAIL_ADDRESS }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+        run: python scripts/fetch_email_images.py
+
+      - name: Commit and push new images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A src/Gallery
+          git diff --staged --quiet || git commit -m "chore: add images from email [skip ci]"
+          git push
