@@ -8,7 +8,7 @@ from pathlib import Path
 
 IMAP_HOST = "imap.gmail.com"
 IMAP_PORT = 993
-EMAIL_ADDRESS = os.environ["PHOTO_BOT_EMAIL_ADDRESS"]
+EMAIL_ADDRESS = os.environ["EMAIL_ADDRESS"]
 EMAIL_APP_PASSWORD = os.environ["EMAIL_APP_PASSWORD"]
 ROOT_DIR = Path(__file__).parent.parent
 MAIN_GALLERY_DIR: Path = ROOT_DIR / "src" / "Gallery" / "Gallery"
