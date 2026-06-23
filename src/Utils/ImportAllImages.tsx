@@ -6,6 +6,6 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
 }
 
 const images = importAll(
-  require.context("../Gallery/Insta", false, /\.(png|jpe?g|svg)$/)
+  require.context("../Gallery/Carousel", false, /\.(png|jpe?g|svg)$/),
 );
 export default images;
