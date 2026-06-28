@@ -1,5 +1,5 @@
 // This is a helper to handle importing multiple images from a folder
-function importAll(r: __WebpackModuleApi.RequireContext) {
+function importImages(r: __WebpackModuleApi.RequireContext) {
   let images: Record<string, string> = {};
   r.keys()
     // Reverse the order of the images so that the most recent ones are first
@@ -8,7 +8,10 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
   return images;
 }
 
-const images = importAll(
+export const carouselImages = importImages(
   require.context("../Gallery/Carousel", false, /\.(png|jpe?g|svg)$/),
 );
-export default images;
+
+export const galleryImages = importImages(
+  require.context("../Gallery/Gallery", false, /\.(png|jpe?g|svg)$/),
+);

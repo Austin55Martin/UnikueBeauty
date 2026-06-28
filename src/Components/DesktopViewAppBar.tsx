@@ -31,7 +31,7 @@ const useStyles = makeStyles()((theme) => ({
     minWidth: "200px",
     width: "calc(20vw - 20px)",
     position: "absolute",
-    left: "10%",
+    left: "20%",
     top: "5%",
   },
   mainLogoDiv: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles()((theme) => ({
     maxWidth: "300px",
     width: "calc(20vw - 50px)",
     position: "absolute",
-    right: "10%",
+    right: "20%",
     top: "12vh",
   },
   img: {
@@ -132,6 +132,7 @@ function DesktopViewAppBar() {
           size={dynamicView.dynamicSizes.buttonSize}
           variant="text"
           className={classes.button}
+          onClick={() => navigate("/gallery")}
         >
           Gallery
         </Button>

@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
 import Carousel from "react-material-ui-carousel";
-import images from "../Utils/ImportAllImages";
+import { carouselImages } from "../Utils/ImportImages";
 
 const useStyles = makeStyles()(() => ({
   root: {
@@ -61,8 +61,13 @@ function InstagramCarousel() {
         className={classes.carousel}
         autoPlay={false}
       >
-        {Object.keys(images).map((key, i) => (
-          <img key={i} src={images[key]} alt={key} className={classes.img} />
+        {Object.keys(carouselImages).map((key, i) => (
+          <img
+            key={i}
+            src={carouselImages[key]}
+            alt={key}
+            className={classes.img}
+          />
         ))}
       </Carousel>
     </div>

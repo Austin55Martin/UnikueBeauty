@@ -38,29 +38,25 @@ function SideDrawerList({ toggleDrawer }: Props) {
   const setShowServicesMenuState = useRecoilState(showServicesMenu)[1];
 
   const IconDictionary = {
-    Home: { icon: <HomeIcon />, onClick: null },
+    Home: { icon: <HomeIcon />, onClick: () => navigate("/") },
     Services: {
       icon: <MenuBookIcon />,
       onClick: () => setShowServicesMenuState(true),
     },
-    Gallery: { icon: <CollectionsIcon />, onClick: null },
+    Gallery: { icon: <CollectionsIcon />, onClick: () => navigate("/gallery") },
     About: { icon: <InfoIcon />, onClick: null },
   };
-
-  const handleDrawerAndNavigate =
-    (path: string) => (event: React.MouseEvent) => {
-      toggleDrawer(false)(event);
-      navigate(
-        path === "Home" || path === "Services" ? "/" : `/${path.toLowerCase()}`,
-      );
-    };
 
   return (
     <List>
       {Object.entries(IconDictionary).map(([text, { icon, onClick }]) => (
         <ListItem disablePadding={true}>
           <ListItemButton
-            onClick={handleDrawerAndNavigate(text)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick && onClick();
+              toggleDrawer(false)(e);
+            }}
             style={{ margin: "8px 0px", height: "3.5rem" }}
           >
             <ListItemIcon sx={{ color: "#1f1f1f" }}>{icon}</ListItemIcon>
@@ -72,7 +68,6 @@ function SideDrawerList({ toggleDrawer }: Props) {
                 fontWeight: "bold",
                 textTransform: "none",
               }}
-              onClick={() => onClick && onClick()}
             />
           </ListItemButton>
         </ListItem>

@@ -10,6 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Theme/Theme";
 import { makeStyles } from "tss-react/mui";
 import BookNowFab from "./Components/BookNowFab";
+import Gallery from "./Views/Gallery";
 
 const useStyles = makeStyles()((theme) => ({
   mainAppStyles: {
@@ -29,6 +30,7 @@ function App() {
           <BookNowFab />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
           <FooterAppBar />
         </RecoilRoot>
