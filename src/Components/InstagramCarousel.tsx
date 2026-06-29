@@ -38,9 +38,16 @@ const useStyles = makeStyles()(() => ({
       position: "absolute",
     },
   },
-  img: {
-    height: "auto",
+  imgWrap: {
     width: "100%",
+    height: 650, // fixed height — every slide is this tall
+    position: "relative",
+  },
+  img: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
   },
   fullHeightHoverWrapper: {
     height: "100%",
@@ -62,12 +69,14 @@ function InstagramCarousel() {
         autoPlay={false}
       >
         {Object.keys(carouselImages).map((key, i) => (
-          <img
-            key={i}
-            src={carouselImages[key]}
-            alt={key}
-            className={classes.img}
-          />
+          <div className={classes.imgWrap} key={i}>
+            <img
+              key={i}
+              src={carouselImages[key]}
+              alt={key}
+              className={classes.img}
+            />
+          </div>
         ))}
       </Carousel>
     </div>
