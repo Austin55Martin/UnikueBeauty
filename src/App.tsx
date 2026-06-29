@@ -1,6 +1,6 @@
 import React from "react";
 import TopAppBar from "./Components/TopAppBar";
-import { RecoilRoot, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Views/Home";
 import "@fontsource/dm-sans";

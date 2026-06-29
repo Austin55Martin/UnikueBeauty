@@ -3,9 +3,6 @@ import { Box, Divider, Typography } from "@mui/material";
 import headshot from "../Gallery/JennHomePage.PNG";
 import { makeStyles } from "tss-react/mui";
 import InstagramCarousel from "../Components/InstagramCarousel";
-import { useRecoilState } from "recoil";
-import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
-import ServicesView from "./ServicesView";
 
 const useStyles = makeStyles()((theme) => ({
   root: {
