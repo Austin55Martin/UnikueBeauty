@@ -5,6 +5,8 @@ import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { showBookNowFab } from "../Atoms/DisplayStateAtoms";
+import { useRecoilState } from "recoil";
 
 export interface Photo {
   id: number;
@@ -152,6 +154,9 @@ function PhotoAlbum({ photos }: PhotoAlbumProps) {
   }, [photos.length]);
 
   let isMobile = useDynamicWindowDimensions().IsMobileView;
+
+  const setShowBookNowFab = useRecoilState(showBookNowFab)[1];
+  setShowBookNowFab(!isOpen);
 
   useEffect(() => {
     if (!isOpen) return;

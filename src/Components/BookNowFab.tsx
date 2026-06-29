@@ -2,7 +2,7 @@ import React from "react";
 import { Fab, useMediaQuery, useTheme } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import { useRecoilState } from "recoil";
-import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
+import { showBookNowFab, showServicesMenu } from "../Atoms/DisplayStateAtoms";
 
 const useStyles = makeStyles()((theme) => ({
   floatingButtonStyle: {
@@ -26,8 +26,9 @@ function BookNowFab() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const setShowServicesMenu = useRecoilState(showServicesMenu)[1];
+  const isShowBookNowFab = useRecoilState(showBookNowFab)[0];
 
-  if (!isMobile) {
+  if (!isMobile || !isShowBookNowFab) {
     return null;
   }
 

@@ -5,3 +5,8 @@ export const showServicesMenu = atom({
   key: 'showServicesMenu',
   default: false, // Initialize with the current viewport width
 });
+
+export const showBookNowFab = atom({
+  key: 'showBookNowFab',
+  default: false, 
+});
