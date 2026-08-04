@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c5c761e5.css",
-    "main.js": "/static/js/main.b2960962.js",
+    "main.css": "/static/css/main.d82f4492.css",
+    "main.js": "/static/js/main.763fcd1a.js",
     "static/media/20260629_010956_002_image2.jpeg.jpg": "/static/media/20260629_010956_002_image2.jpeg.a71ca1fc2f6bc11bd9cd.jpg",
     "static/media/20260629_010956_000_image0.jpeg.jpg": "/static/media/20260629_010956_000_image0.jpeg.f4c497e7180b87ea2a81.jpg",
     "static/media/20260629_010956_005_image5.jpeg.jpg": "/static/media/20260629_010956_005_image5.jpeg.22e482bde16b543ccb50.jpg",
@@ -12,6 +12,10 @@
     "static/media/20260629_010956_003_image3.jpeg.jpg": "/static/media/20260629_010956_003_image3.jpeg.9c4eab96250db7520b9f.jpg",
     "static/media/20260629_010956_006_image6.jpeg.jpg": "/static/media/20260629_010956_006_image6.jpeg.532276aa96d21d1e940b.jpg",
     "static/media/JennHomePage.PNG": "/static/media/JennHomePage.63b4207e486ad62b83e7.PNG",
+    "static/media/Unikue_Beauty_Primary_Logo_Print_Ready.png": "/static/media/Unikue_Beauty_Primary_Logo_Print_Ready.a565da41df2539c324f3.png",
+    "static/media/agreementforums.png": "/static/media/agreementforums.6de64c60336c4428a59c.png",
+    "static/media/colorcorrectionforum.png": "/static/media/colorcorrectionforum.5ca1e1439a7aae47d2ee.png",
+    "static/media/Unikue_Beauty_Icon_Logo.png": "/static/media/Unikue_Beauty_Icon_Logo.8c59b20239b66a1d4555.png",
     "static/media/20240101_000015_015_image.jpg": "/static/media/20240101_000015_015_image.2f6da25600db1410a67e.jpg",
     "static/media/20240101_000004_004_image.jpg": "/static/media/20240101_000004_004_image.2da71169da5239ceea18.jpg",
     "static/media/20240101_000000_000_image.jpg": "/static/media/20240101_000000_000_image.0005fe176ebf97f40e5b.jpg",
@@ -29,7 +33,6 @@
     "static/media/20260623_053946_000_testimage.jpg": "/static/media/20260623_053946_000_testimage.a27e60be8ae62329082a.jpg",
     "static/media/20240101_000011_011_image.jpg": "/static/media/20240101_000011_011_image.772be5afad64e14126ea.jpg",
     "static/media/20240101_000014_014_image.jpg": "/static/media/20240101_000014_014_image.2658f2d088ff37d9ef34.jpg",
-    "static/media/MainLogo.PNG": "/static/media/MainLogo.3a69711547fa86786a95.PNG",
     "static/media/cowboy.PNG": "/static/media/cowboy.98ae33c286d5aa2a351a.PNG",
     "static/media/sacramento-latin-400-normal.woff": "/static/media/sacramento-latin-400-normal.4005a4a412cdbdaf17c6.woff",
     "static/media/sacramento-latin-400-normal.woff2": "/static/media/sacramento-latin-400-normal.744cd7b400b875e7a501.woff2",
@@ -41,11 +44,11 @@
     "static/media/cow.PNG": "/static/media/cow.d822149fde4b1e7f0626.PNG",
     "static/media/dm-sans-latin-ext-400-normal.woff2": "/static/media/dm-sans-latin-ext-400-normal.f65533d614ce4031f8a9.woff2",
     "index.html": "/index.html",
-    "main.c5c761e5.css.map": "/static/css/main.c5c761e5.css.map",
-    "main.b2960962.js.map": "/static/js/main.b2960962.js.map"
+    "main.d82f4492.css.map": "/static/css/main.d82f4492.css.map",
+    "main.763fcd1a.js.map": "/static/js/main.763fcd1a.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5c761e5.css",
-    "static/js/main.b2960962.js"
+    "static/css/main.d82f4492.css",
+    "static/js/main.763fcd1a.js"
   ]
 }
