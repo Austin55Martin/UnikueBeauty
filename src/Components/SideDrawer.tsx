@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Button, Divider, IconButton, Typography } from "@mui/material";
-import { SxProps, styled } from "@mui/material/styles";
 import Drawer from "@mui/material/Drawer";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import CloseIcon from "@mui/icons-material/Close";
@@ -19,14 +18,48 @@ import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
 import { useRecoilState } from "recoil";
+import { makeStyles } from "tss-react/mui";
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  marginTop: "8px",
-  alignItems: "center",
-  paddingLeft: 8,
-  paddingRight: 8,
-  justifyContent: "space-between",
+const useStyles = makeStyles()((theme) => ({
+  drawerHeader: {
+    display: "flex",
+    marginTop: "8px",
+    alignItems: "center",
+    paddingLeft: 8,
+    paddingRight: 8,
+    justifyContent: "space-between",
+  },
+  listItemButton: {
+    margin: "8px 0px",
+    height: "3.5rem",
+  },
+  icon: {
+    color: "#1f1f1f",
+  },
+  toggleButton: {
+    boxShadow: theme.shadows[3],
+    padding: ".1rem",
+    width: "100%",
+    backgroundColor: "#b48c64",
+  },
+  toggleIcon: {
+    color: "#f2f2f2",
+  },
+  drawerPaper: {
+    padding: "8px 16px",
+    backgroundColor: "#f2f2f2",
+    boxShadow: theme.shadows[3],
+  },
+  phoneNumber: {
+    fontSize: "1.25rem",
+    textAlign: "center",
+    fontFamily: "DM Sans",
+    color: theme.palette.text.black,
+    fontWeight: "600",
+  },
+  divider: {
+    margin: "4px 0px",
+  },
 }));
 
 type Props = {
@@ -34,6 +67,7 @@ type Props = {
 };
 
 function SideDrawerList({ toggleDrawer }: Props) {
+  const { classes } = useStyles();
   const navigate = useNavigate();
   const setShowServicesMenuState = useRecoilState(showServicesMenu)[1];
 
@@ -57,9 +91,9 @@ function SideDrawerList({ toggleDrawer }: Props) {
               onClick && onClick();
               toggleDrawer(false)(e);
             }}
-            style={{ margin: "8px 0px", height: "3.5rem" }}
+            className={classes.listItemButton}
           >
-            <ListItemIcon sx={{ color: "#1f1f1f" }}>{icon}</ListItemIcon>
+            <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
             <ListItemText
               primary={text}
               primaryTypographyProps={{
@@ -77,6 +111,7 @@ function SideDrawerList({ toggleDrawer }: Props) {
 }
 
 export default function SideDrawerButtonToggle() {
+  const { classes } = useStyles();
   const [isDrawerOpen, setDrawerState] = React.useState(false);
 
   const toggleDrawer = (open: boolean) => (event: any) => {
@@ -89,16 +124,11 @@ export default function SideDrawerButtonToggle() {
         size="large"
         variant="text"
         onClick={toggleDrawer(true)}
-        sx={{
-          boxShadow: 3,
-          padding: ".1rem",
-          width: "100%",
-          backgroundColor: "#b48c64",
-        }}
+        className={classes.toggleButton}
       >
         <KeyboardDoubleArrowDownIcon
           fontSize="large"
-          sx={{ color: "#f2f2f2" }}
+          className={classes.toggleIcon}
         />
       </Button>
       <Drawer
@@ -106,33 +136,17 @@ export default function SideDrawerButtonToggle() {
         open={isDrawerOpen}
         onClose={toggleDrawer(false)}
         variant="temporary"
-        sx={
-          {
-            "& .MuiDrawer-paper": {
-              padding: "8px 16px",
-              backgroundColor: "#f2f2f2",
-              boxShadow: 3,
-            },
-          } as SxProps
-        }
+        classes={{ paper: classes.drawerPaper }}
       >
-        <DrawerHeader>
+        <div className={classes.drawerHeader}>
           <IconButton onClick={toggleDrawer(false)}>
-            <CloseIcon fontSize="large" sx={{ color: "#1f1f1f" }} />
+            <CloseIcon fontSize="large" className={classes.icon} />
           </IconButton>
-          <Typography
-            sx={{
-              fontSize: "1.25rem",
-              textAlign: "center",
-              fontFamily: "DM Sans",
-              color: (theme) => theme.palette.text.black,
-              fontWeight: "600",
-            }}
-          >
+          <Typography className={classes.phoneNumber}>
             360-901-6678
           </Typography>
-        </DrawerHeader>
-        <Divider sx={{ margin: "4px 0px" }} />
+        </div>
+        <Divider className={classes.divider} />
         <SideDrawerList toggleDrawer={toggleDrawer} />
       </Drawer>
     </>

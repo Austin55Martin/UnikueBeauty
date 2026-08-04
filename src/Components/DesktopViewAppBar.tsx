@@ -74,6 +74,12 @@ const useStyles = makeStyles()((theme) => ({
     marginRight: "1rem",
     marginLeft: "1rem",
   },
+  navButtonsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: theme.spacing(2),
+  },
 }));
 
 function DesktopViewAppBar() {
@@ -102,14 +108,7 @@ function DesktopViewAppBar() {
           Battle Ground • WA
         </Typography>
       </div>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          mb: 2,
-        }}
-      >
+      <Box className={classes.navButtonsContainer}>
         <Button
           size={dynamicView.dynamicSizes.buttonSize}
           variant="text"

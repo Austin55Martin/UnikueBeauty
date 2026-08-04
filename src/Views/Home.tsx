@@ -39,6 +39,23 @@ const useStyles = makeStyles()((theme) => ({
   typographyStyles: {
     wordWrap: "break-word",
   },
+  bodyText: {
+    fontSize: "1.15rem",
+  },
+  motto: {
+    fontWeight: "600",
+    marginTop: "1.25rem",
+  },
+  innerBox: {
+    padding: 0,
+    maxWidth: "800px",
+  },
+  subDivider: {
+    backgroundColor: theme.palette.divider,
+    width: "50%",
+    marginTop: ".25rem",
+    marginBottom: "1rem",
+  },
   subHeaderStyles: {
     letterSpacing: ".15rem",
     fontSize: "20px",
@@ -80,7 +97,7 @@ const useStyles = makeStyles()((theme) => ({
 }));
 
 function Home() {
-  const { classes, theme, cx } = useStyles();
+  const { classes, cx } = useStyles();
 
   const headerText = "THE SALON";
   const paragraphText =
@@ -98,15 +115,13 @@ function Home() {
           </Typography>
           <br />
           <Typography
-            className={classes.typographyStyles}
-            sx={{ fontSize: "1.15rem" }}
+            className={cx(classes.typographyStyles, classes.bodyText)}
           >
             {welcomeText}
           </Typography>
           <br />
           <Typography
-            className={classes.typographyStyles}
-            sx={{ fontSize: "1.15rem" }}
+            className={cx(classes.typographyStyles, classes.bodyText)}
           >
             {
               "Come in, relax, and let me take care of you in my warm and welcoming salon. I can't wait to help you look and feel your best!"
@@ -126,8 +141,7 @@ function Home() {
         )}
       >
         <Box
-          className={cx(classes.centeredFlexColumnBox)}
-          sx={{ padding: 0, maxWidth: "800px" }}
+          className={cx(classes.centeredFlexColumnBox, classes.innerBox)}
         >
           <Box className={cx(classes.centeredFlexColumnBox)}>
             <Typography
@@ -136,22 +150,14 @@ function Home() {
             >
               {headerText}
             </Typography>
-            <Divider
-              sx={{
-                backgroundColor: theme.palette.divider,
-                width: "50%",
-                marginTop: ".25rem",
-                marginBottom: "1rem",
-              }}
-            />
+            <Divider className={classes.subDivider} />
           </Box>
           <Typography variant="body1" className={classes.typographyStyles}>
             {paragraphText}
           </Typography>
           <Typography
             variant="body1"
-            className={classes.typographyStyles}
-            sx={{ fontWeight: "600", marginTop: "1.25rem" }}
+            className={cx(classes.typographyStyles, classes.motto)}
           >
             {mottoText}
           </Typography>

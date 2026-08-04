@@ -52,6 +52,9 @@ const useStyles = makeStyles()((theme) => ({
     height: "calc(100% - 60px)",
     border: "none",
   },
+  closeIcon: {
+    color: "#1f1f1f",
+  },
 }));
 
 type Props = {
@@ -78,7 +81,7 @@ function ServicesView({ open, onClose }: Props) {
           <IconButton onClick={onClose}>
             <CloseButtonIcon
               fontSize={isMobile ? "medium" : "large"}
-              sx={{ color: "#1f1f1f" }}
+              className={classes.closeIcon}
             />
           </IconButton>
         </Box>
