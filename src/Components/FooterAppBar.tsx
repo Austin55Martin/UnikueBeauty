@@ -1,10 +1,12 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import MainLogo from "../Gallery/MainLogo.PNG";
+import TikTokIcon from "./TikTokIcon";
+import MainLogo from "../Gallery/logos/Unikue_Beauty_Icon_Logo.png";
 import { ButtonGroup, Button, IconButton, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
 
 const useStyles = makeStyles()(() => ({
   container: {
@@ -58,6 +60,8 @@ const useStyles = makeStyles()(() => ({
 
 function FooterAppBar() {
   const { classes } = useStyles();
+  const navigate = useNavigate();
+  const setShowServicesMenu = useRecoilState(showServicesMenu)[1];
 
   return (
     <div className={classes.container}>
@@ -70,9 +74,21 @@ function FooterAppBar() {
           disableFocusRipple
           className={classes.buttonGroup}
         >
-          <Button className={classes.links}>Link 1</Button>
-          <Button className={classes.links}>Link 2</Button>
-          <Button className={classes.links}>Link 3</Button>
+          <Button
+            className={classes.links}
+            onClick={() => setShowServicesMenu(true)}
+          >
+            Services
+          </Button>
+          <Button
+            className={classes.links}
+            onClick={() => navigate("/gallery")}
+          >
+            Gallery
+          </Button>
+          <Button className={classes.links} onClick={() => navigate("/forms")}>
+            Forms
+          </Button>
         </ButtonGroup>
       </div>
       <div className={classes.linkContainer}>
@@ -81,14 +97,21 @@ function FooterAppBar() {
           disableFocusRipple
           className={classes.buttonGroup}
         >
-          <IconButton>
+          <IconButton
+            href="https://www.instagram.com/unikuebeauty/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <InstagramIcon className={classes.socialIcons} />
           </IconButton>
-          <IconButton>
-            <FacebookIcon className={classes.socialIcons} />
-          </IconButton>
-          <IconButton>
-            <LinkedInIcon className={classes.socialIcons} />
+          <IconButton
+            href="https://www.tiktok.com/@jennicamartin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <TikTokIcon className={classes.socialIcons} />
           </IconButton>
         </ButtonGroup>
       </div>
