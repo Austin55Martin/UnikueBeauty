@@ -1,6 +1,6 @@
 import { AppBar, Box, Toolbar } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import MainLogo from "../Gallery/MainLogo.PNG";
+import MainLogo from "../Gallery/logos/Unikue_Beauty_Primary_Logo_Print_Ready.png";
 import cowboy from "../Gallery/cowboy.PNG";
 import cow from "../Gallery/cow.PNG";
 import React from "react";

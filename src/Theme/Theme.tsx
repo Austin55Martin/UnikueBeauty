@@ -16,6 +16,9 @@ declare module "@mui/material/styles" {
       lg?: DisplayProperty;
     };
   }
+  interface TypeText {
+    black: string;
+  }
 }
 
 export const theme = createTheme({
@@ -27,6 +30,9 @@ export const theme = createTheme({
     divider: "#3d3d3d",
     background: {
       default: "#f2f2f2",
+    },
+    text: {
+      black: "#0A0A0A",
     },
   },
   displaySettings: {

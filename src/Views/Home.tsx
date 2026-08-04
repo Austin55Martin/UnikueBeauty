@@ -13,6 +13,7 @@ const useStyles = makeStyles()((theme) => ({
     paddingRight: "1.75rem",
     paddingTop: "1rem",
     gap: "3rem",
+    color: theme.palette.text.black,
   },
   centeredFlexRowBox: {
     display: "flex",
@@ -115,7 +116,7 @@ function Home() {
       </Box>
       <Divider className={classes.divider} />
       <Typography className={classes.headerStyle}>
-        See what's possible
+        See What's Possible
       </Typography>
       <InstagramCarousel />
       <div

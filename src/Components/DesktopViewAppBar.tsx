@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Box, Button, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
-import MainLogo from "../Gallery/MainLogo.PNG";
+import MainLogo from "../Gallery/logos/Unikue_Beauty_Primary_Logo_Print_Ready.png";
 import cowboy from "../Gallery/cowboy.PNG";
 import cow from "../Gallery/cow.PNG";
 import { makeStyles } from "tss-react/mui";
@@ -31,13 +31,13 @@ const useStyles = makeStyles()((theme) => ({
     minWidth: "200px",
     width: "calc(20vw - 20px)",
     position: "absolute",
-    left: "20%",
+    left: "15%",
     top: "5%",
   },
   mainLogoDiv: {
     height: "auto",
     minWidth: "300",
-    width: "380px",
+    width: "320px",
     display: "flex",
     justifyContent: "center",
     zIndex: 10,
@@ -48,7 +48,7 @@ const useStyles = makeStyles()((theme) => ({
     maxWidth: "300px",
     width: "calc(20vw - 50px)",
     position: "absolute",
-    right: "20%",
+    right: "15%",
     top: "12vh",
   },
   img: {
@@ -61,14 +61,14 @@ const useStyles = makeStyles()((theme) => ({
   },
   text: {
     textAlign: "center",
-    color: "#554a2e",
+    color: theme.palette.text.black,
     fontWeight: "600",
   },
   button: {
     fontFamily: "DM Sans",
     fontSize: theme.displaySettings.lg.fontSize,
     fontWeight: "600",
-    color: "#554a2e", // orange color: "#c6a10e"
+    color: theme.palette.text.black, // orange color: "#c6a10e"
     borderRadius: "10px",
     textTransform: "none",
     marginRight: "1rem",

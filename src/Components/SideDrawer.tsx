@@ -125,7 +125,7 @@ export default function SideDrawerButtonToggle() {
               fontSize: "1.25rem",
               textAlign: "center",
               fontFamily: "DM Sans",
-              color: "#554a2e",
+              color: (theme) => theme.palette.text.black,
               fontWeight: "600",
             }}
           >
