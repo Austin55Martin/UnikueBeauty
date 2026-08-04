@@ -14,6 +14,7 @@ import "@fontsource/dm-sans";
 import InfoIcon from "@mui/icons-material/Info";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import AssignmentIcon from "@mui/icons-material/Assignment";
 import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import { showServicesMenu } from "../Atoms/DisplayStateAtoms";
@@ -78,6 +79,7 @@ function SideDrawerList({ toggleDrawer }: Props) {
       onClick: () => setShowServicesMenuState(true),
     },
     Gallery: { icon: <CollectionsIcon />, onClick: () => navigate("/gallery") },
+    Forms: { icon: <AssignmentIcon />, onClick: () => navigate("/forms") },
     About: { icon: <InfoIcon />, onClick: null },
   };
 

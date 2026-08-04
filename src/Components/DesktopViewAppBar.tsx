@@ -140,6 +140,15 @@ function DesktopViewAppBar() {
           size={dynamicView.dynamicSizes.buttonSize}
           variant="text"
           className={classes.button}
+          onClick={() => navigate("/forms")}
+        >
+          Forms
+        </Button>
+        <Divider orientation="vertical" flexItem></Divider>
+        <Button
+          size={dynamicView.dynamicSizes.buttonSize}
+          variant="text"
+          className={classes.button}
         >
           About
         </Button>
