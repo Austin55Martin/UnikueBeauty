@@ -1,17 +1,26 @@
 // This is a helper to handle importing multiple images from a folder
-function importImages(r: __WebpackModuleApi.RequireContext) {
-  let images: Record<string, string> = {};
-  r.keys()
+function importImages(modules: Record<string, string>) {
+  const images: Record<string, string> = {};
+  Object.keys(modules)
     // Reverse the order of the images so that the most recent ones are first
     .reverse()
-    .map((item, _) => (images[item.replace("./", "")] = r(item)));
+    .forEach((path) => {
+      const filename = path.substring(path.lastIndexOf("/") + 1);
+      images[filename] = modules[path];
+    });
   return images;
 }
 
-export const carouselImages = importImages(
-  require.context("../Gallery/Carousel", false, /\.(png|jpe?g|svg)$/),
+const carouselModules = import.meta.glob<string>(
+  "../Gallery/Carousel/*.{png,jpg,jpeg,svg}",
+  { eager: true, import: "default" },
 );
 
-export const galleryImages = importImages(
-  require.context("../Gallery/Gallery", false, /\.(png|jpe?g|svg)$/),
+const galleryModules = import.meta.glob<string>(
+  "../Gallery/Gallery/*.{png,jpg,jpeg,svg}",
+  { eager: true, import: "default" },
 );
+
+export const carouselImages = importImages(carouselModules);
+
+export const galleryImages = importImages(galleryModules);
