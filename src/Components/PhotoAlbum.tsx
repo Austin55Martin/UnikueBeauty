@@ -156,7 +156,21 @@ function PhotoAlbum({ photos }: PhotoAlbumProps) {
   let isMobile = useDynamicWindowDimensions().IsMobileView;
 
   const setShowBookNowFab = useRecoilState(showBookNowFab)[1];
-  setShowBookNowFab(!isOpen);
+
+  useEffect(() => {
+    setShowBookNowFab(!isOpen);
+  }, [isOpen, setShowBookNowFab]);
+
+  // Preload the neighboring photos so flipping through the lightbox doesn't
+  // have to wait on a network fetch + decode before the next image paints.
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    [lightboxIndex - 1, lightboxIndex + 1].forEach((i) => {
+      const photo = photos[i];
+      if (!photo) return;
+      new Image().src = photo.url;
+    });
+  }, [lightboxIndex, photos]);
 
   useEffect(() => {
     if (!isOpen) return;

@@ -11,16 +11,26 @@ function importImages(modules: Record<string, string>) {
   return images;
 }
 
+// Resized/re-encoded via vite-imagetools (see vite.config.ts) so the browser
+// never has to download full camera-resolution originals just to display
+// them in a small grid cell or a carousel slide.
 const carouselModules = import.meta.glob<string>(
   "../Gallery/Carousel/*.{png,jpg,jpeg,svg}",
-  { eager: true, import: "default" },
+  { eager: true, import: "default", query: "?w=1000&format=webp&quality=80" },
 );
 
-const galleryModules = import.meta.glob<string>(
+const galleryThumbModules = import.meta.glob<string>(
   "../Gallery/Gallery/*.{png,jpg,jpeg,svg}",
-  { eager: true, import: "default" },
+  { eager: true, import: "default", query: "?w=400&format=webp&quality=70" },
+);
+
+const galleryFullModules = import.meta.glob<string>(
+  "../Gallery/Gallery/*.{png,jpg,jpeg,svg}",
+  { eager: true, import: "default", query: "?w=1600&format=webp&quality=82" },
 );
 
 export const carouselImages = importImages(carouselModules);
 
-export const galleryImages = importImages(galleryModules);
+export const galleryThumbImages = importImages(galleryThumbModules);
+
+export const galleryFullImages = importImages(galleryFullModules);
