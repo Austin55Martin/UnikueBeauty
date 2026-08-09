@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+} from "react";
 import { makeStyles } from "tss-react/mui";
 import { useDynamicWindowDimensions } from "../Theme/DynamicDisplay";
 import { IconButton } from "@mui/material";
@@ -141,6 +147,7 @@ const useStyles = makeStyles()({
 
 function PhotoAlbum({ photos }: PhotoAlbumProps) {
   const { classes, cx } = useStyles();
+  const thumbWidth = 52 + 8; // thumb width + gap
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const currentPhoto = lightboxIndex !== null ? photos[lightboxIndex] : null;
   const isOpen = lightboxIndex !== null;
@@ -190,6 +197,36 @@ function PhotoAlbum({ photos }: PhotoAlbumProps) {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  const filmstripRef = useRef<HTMLDivElement>(null);
+  const [filmstripWidth, setFilmstripWidth] = useState<number>(0);
+  useLayoutEffect(() => {
+    if (!filmstripRef.current) return;
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        // Returns the rendering width, factoring in border and padding
+        setFilmstripWidth(entry.contentRect.width);
+      }
+    });
+
+    resizeObserver.observe(filmstripRef.current);
+
+    return () => resizeObserver.disconnect();
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!filmstripRef.current || lightboxIndex === null) return;
+    const filmstrip = filmstripRef.current;
+    filmstrip.scrollTo({
+      left: Math.max(
+        0,
+        // Get left edge of where the active thumb is
+        lightboxIndex * thumbWidth -
+          // Center the active thumb in the filmstrip
+          (filmstripWidth - thumbWidth) / 2,
+      ),
+    });
+  }, [filmstripWidth, lightboxIndex, photos.length]);
 
   return (
     <>
@@ -258,7 +295,11 @@ function PhotoAlbum({ photos }: PhotoAlbumProps) {
           </div>
 
           {/* Filmstrip */}
-          <div className={classes.strip} onClick={(e) => e.stopPropagation()}>
+          <div
+            ref={filmstripRef}
+            className={classes.strip}
+            onClick={(e) => e.stopPropagation()}
+          >
             {photos.map((photo, index) => (
               <img
                 key={photo.id}
