@@ -28,6 +28,7 @@ interface PhotoAlbumProps {
 const useStyles = makeStyles()({
   grid: {
     display: "grid",
+    width: "60%",
     gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
     gap: 10,
   },
