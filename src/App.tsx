@@ -12,6 +12,7 @@ import { makeStyles } from "tss-react/mui";
 import BookNowFab from "./Components/BookNowFab";
 import Gallery from "./Views/Gallery";
 import Forms from "./Views/Forms";
+import NotFound from "./Views/NotFound";
 import { showServicesMenu } from "./Atoms/DisplayStateAtoms";
 import ServicesView from "./Views/ServicesView";
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/forms" element={<Forms />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <FooterAppBar />
       </div>
