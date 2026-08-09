@@ -11,7 +11,6 @@ import {
   ListItemIcon,
 } from "@mui/material";
 import "@fontsource/dm-sans";
-import InfoIcon from "@mui/icons-material/Info";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import AssignmentIcon from "@mui/icons-material/Assignment";
@@ -80,7 +79,6 @@ function SideDrawerList({ toggleDrawer }: Props) {
     },
     Gallery: { icon: <CollectionsIcon />, onClick: () => navigate("/gallery") },
     Forms: { icon: <AssignmentIcon />, onClick: () => navigate("/forms") },
-    About: { icon: <InfoIcon />, onClick: null },
   };
 
   return (

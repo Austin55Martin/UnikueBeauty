@@ -144,14 +144,6 @@ function DesktopViewAppBar() {
         >
           Forms
         </Button>
-        <Divider orientation="vertical" flexItem></Divider>
-        <Button
-          size={dynamicView.dynamicSizes.buttonSize}
-          variant="text"
-          className={classes.button}
-        >
-          About
-        </Button>
       </Box>
     </AppBar>
   );
